@@ -1,0 +1,60 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3D73E67-0F5D-4F71-B534-118855F99E01}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>run_aegis.py</StartupFile>
+    <SearchPath>.</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Aegis</Name>
+    <RootNamespace>Aegis</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="run_aegis.py" />
+    <Compile Include="aegis\aegis_app.py" />
+    <Compile Include="aegis\core\__init__.py" />
+    <Compile Include="aegis\core\types.py" />
+    <Compile Include="aegis\core\database.py" />
+    <Compile Include="aegis\core\security.py" />
+    <Compile Include="aegis\core\logger.py" />
+    <Compile Include="aegis\ledger\__init__.py" />
+    <Compile Include="aegis\ledger\models.py" />
+    <Compile Include="aegis\ledger\service.py" />
+    <Compile Include="aegis\ledger\invariants.py" />
+    <Compile Include="aegis\ledger\exceptions.py" />
+    <Compile Include="aegis\transactions\__init__.py" />
+    <Compile Include="aegis\transactions\models.py" />
+    <Compile Include="aegis\transactions\processor.py" />
+    <Compile Include="aegis\transactions\state_machine.py" />
+    <Compile Include="aegis\events\__init__.py" />
+    <Compile Include="aegis\events\models.py" />
+    <Compile Include="aegis\events\outbox.py" />
+    <Compile Include="aegis\events\worker.py" />
+    <Compile Include="aegis\reconciliation\__init__.py" />
+    <Compile Include="aegis\reconciliation\models.py" />
+    <Compile Include="aegis\reconciliation\engine.py" />
+    <Compile Include="aegis\risk\__init__.py" />
+    <Compile Include="aegis\risk\models.py" />
+    <Compile Include="aegis\risk\engine.py" />
+    <Compile Include="aegis\risk\rules.py" />
+    <Compile Include="aegis\risk\anomaly.py" />
+    <Compile Include="aegis\risk\graph.py" />
+    <Compile Include="aegis\risk\cases.py" />
+    <Compile Include="aegis\api\__init__.py" />
+    <Compile Include="aegis\api\server.py" />
+    <Compile Include="aegis\api\dashboard.py" />
+    <Compile Include="aegis\tests\run_all.py" />
+    <Compile Include="aegis\tests\test_ledger_invariants.py" />
+    <Compile Include="aegis\tests\test_concurrency.py" />
+    <Compile Include="aegis\tests\test_idempotency.py" />
+    <Compile Include="aegis\tests\test_outbox.py" />
+    <Compile Include="aegis\tests\test_reconciliation.py" />
+    <Compile Include="aegis\tests\test_risk_engine.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aegis\README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
